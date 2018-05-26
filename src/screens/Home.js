@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
 import { Icon, Header, Left, Right, Body, Container, Content, Thumbnail } from 'native-base';
 const imageURL = 'https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg';
 const UserData = [
@@ -35,13 +35,13 @@ renderItem = ({item}) => {
                 <Right><Icon name="ios-send-outline" style={{paddingRight: 10}} /></Right>
             </Header>
             <Content>
-                <View style={styles.avatarContainer}>
-                 <View stlye={styles.avatarTextContainer}>
-                    <Text style={{fontWeight:'bold', fontSize: 18}}>Stories</Text>
-                    <View style={styles.iconContainer}>
-                        <Icon name="md-play" style={{color: 'black', fontSize: 16, marginRight: 3}}/>
-                        <Text> Watch All</Text>
-                    </View>
+            <View style={styles.avatarContainer}>
+            <View style={styles.avatarTextContainer}>
+              <Text style={{fontWeight: 'bold', fontSize: 18 }}>Stories</Text>
+              <View style={styles.iconContainer}>
+                <Icon name="md-play" style={{color: 'black', fontSize: 16, marginRight: 5}}/>
+                <Text style={{fontWeight: 'bold', fontSize: 18}}>Watch All</Text>
+              </View>
                  </View>
                 <View style ={styles.avatarScroller}>
                     <FlatList
@@ -59,24 +59,26 @@ renderItem = ({item}) => {
 }
 const styles = StyleSheet.create({
     avatarContainer: {
-        flex: 1,
-        flexDirection: 'column',
-        height: 110,
-        borderBottomWidth: 1,
-        borderBottomColor: 'grey'
-    },
-    avatarTextContainer: {
-        flex: 3
+      flex: 1,
+      flexDirection: 'column',
+      height: 120,
+      borderBottomWidth: 1,
+      borderBottomColor: 'lightgrey',
+      paddingHorizontal: 15,
+      paddingBottom: 5,
     },
     avatarScroller: {
-        paddingTop: 5,
-        flex: 1,
-        justifyContent: 'space-between',
-        flexDirection: 'row'
+      flex: 3
+    },
+    avatarTextContainer: {
+      paddingTop: 5,
+      flex: 1,
+      justifyContent: 'space-between',
+      flexDirection: 'row'
     },
     iconContainer: {
-        flexDirection: 'row'
+      flexDirection: 'row'
     }
-})
+  })  
 
 export default Home;
