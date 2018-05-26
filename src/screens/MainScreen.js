@@ -18,16 +18,16 @@ const TabNavigator = createBottomTabNavigator({
     swipeEnabled: true,
     animationEnabled: true,
     tabBarOptions: {
-        activeTintColour: 'black',
-        inActiveTintColor: 'grey'
-    }
+        activeTintColor: 'black',
+        inActiveTintColor: 'grey',
+        showLabel: false,
+        showIcon: true,
+    }  
 })
 
 class MainScreen extends React.Component {
     static navigationOptions = {
-        title: 'Instagram',
-        headerLeft: <Icon name="ios-camera-outline" style={{paddingLeft: 10}} />,
-        headerRight: <Icon name="ios-send-outline" style={{paddingRight: 10}} />
+        header: null
     }
   render() {
     return (

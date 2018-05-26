@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Text, View } from 'react-native';
-import { Icon } from 'native-base';
+import { Icon, Header, Left, Right, Body, Container, Content } from 'native-base';
 
 class Home extends React.Component {
 static navigationOptions = {
@@ -8,9 +8,16 @@ static navigationOptions = {
 }
   render() {
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: "center"}}>
-        <Text> Home </Text>
-       </View>
+        <Container>
+            <Header>
+                <Left><Icon name="ios-camera-outline" style={{paddingLeft: 10}}/></Left>
+                <Body><Text>Instagram</Text></Body>
+                <Right><Icon name="ios-send-outline" style={{paddingRight: 10}} /></Right>
+            </Header>
+            <Content>
+                <Text>Welcome to Insta</Text>
+            </Content>
+        </Container>
     );
   }
 }
