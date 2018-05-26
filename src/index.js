@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import MainScreen from './screens.MainScreen.js';
+import MainScreen from './screens/MainScreen.js';
 
 const AppNavigator = createStackNavigator({
     Main: {screen: MainScreen},

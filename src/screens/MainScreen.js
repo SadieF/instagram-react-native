@@ -6,12 +6,21 @@ import Home from './Home';
 import Search from './Search';
 import AddMedia from './AddMedia';
 import Likes from './Likes';
+import Profile from './Profile';
 
 const TabNavigator = createBottomTabNavigator({
     Home: { screen: Home },
     Search: { screen: Search },
-    AddMedia: { screen: addMedia },
-    Likes: { screen: Likes }
+    AddMedia: { screen: AddMedia },
+    Likes: { screen: Likes },
+    Profile: { screen: Profile }
+},{
+    swipeEnabled: true,
+    animationEnabled: true,
+    tabBarOptions: {
+        activeTintColour: 'black',
+        inActiveTintColor: 'grey'
+    }
 })
 
 class MainScreen extends React.Component {
@@ -22,9 +31,7 @@ class MainScreen extends React.Component {
     }
   render() {
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: "center"}}>
-        <Text> Mainscreen </Text>
-       </View>
+       < TabNavigator />
     );
   }
 }
